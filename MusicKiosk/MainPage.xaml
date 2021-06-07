@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"  
+ x:Class="MusicKiosk.MainPage" Background="#bf5700">
+    <Grid>
+    <flv:FlowListView FlowColumnCount="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+            SeparatorVisibility="Default"   
+            HasUnevenRows="True"  
+            FlowItemsSource="{Binding Songs}" FlowItemTapped="FlowListView_FlowItemTapped">
+
+        <flv:FlowListView.FlowColumnTemplate>
+            <DataTemplate>
+                    <Frame BackgroundColor="#f8971f" Margin="8" BorderColor="#333f48">
+                    <Label HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" TextColor="White"
+                            XAlign="Center" YAlign="Center" FontSize="Large"  Text="{Binding Path=Number }" Margin="-10"/>
+                </Frame>
+            </DataTemplate>
+        </flv:FlowListView.FlowColumnTemplate>
+    </flv:FlowListView>
+    </Grid>
+</ContentPage>
