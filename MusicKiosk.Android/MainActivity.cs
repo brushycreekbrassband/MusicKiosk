@@ -35,9 +35,9 @@ namespace MusicKiosk.Droid
             CheckAppPermissions();
             //string[] files = Directory.GetFiles("/", "*.*", SearchOption.TopDirectoryOnly);
 
-            string folder = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryMusic).ToString() + "/BCBB";
+            string folder = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryMusic).ToString();
            
-            ObservableCollection<Song> songs = JsonConvert.DeserializeObject<ObservableCollection<Song>>(File.ReadAllText(Path.Combine(folder, "songs.json")));
+            ObservableCollection<Song> songs = JsonConvert.DeserializeObject<ObservableCollection<Song>>(File.ReadAllText(Path.Combine(folder, "MusicKiosk.json")));
            // List<string> files = Directory.GetFiles(folder, "*.mp3", SearchOption.AllDirectories).ToList();
 
             LoadApplication(new App(songs, new AudioService(folder)));

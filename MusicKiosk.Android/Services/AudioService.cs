@@ -41,8 +41,9 @@ namespace MusicKiosk.Droid.Services
                 _mediaPlayer.Start();
             };
 
-        //    var fd = global::Android.App.Application.Context.Assets.OpenFd(fileName);
-            _mediaPlayer.SetDataSource(Path.Combine(_folder, fileName));
+            //    var fd = global::Android.App.Application.Context.Assets.OpenFd(fileName);
+            string filePath = Path.Combine(_folder, fileName);
+            _mediaPlayer.SetDataSource(filePath);
             _mediaPlayer.Prepare();
         }
     }
