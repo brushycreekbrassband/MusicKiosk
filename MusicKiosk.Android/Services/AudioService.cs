@@ -42,7 +42,7 @@ namespace MusicKiosk.Droid.Services
             };
 
             //    var fd = global::Android.App.Application.Context.Assets.OpenFd(fileName);
-            string filePath = Path.Combine(_folder, fileName);
+            string filePath = Path.Combine(_folder, "MusicKiosk", fileName);
             _mediaPlayer.SetDataSource(filePath);
             _mediaPlayer.Prepare();
         }

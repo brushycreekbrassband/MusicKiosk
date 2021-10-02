@@ -37,7 +37,7 @@ namespace MusicKiosk.Droid
 
             string folder = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryMusic).ToString();
            
-            ObservableCollection<Song> songs = JsonConvert.DeserializeObject<ObservableCollection<Song>>(File.ReadAllText(Path.Combine(folder, "MusicKiosk.json")));
+            ObservableCollection<Song> songs = JsonConvert.DeserializeObject<ObservableCollection<Song>>(File.ReadAllText(Path.Combine(folder, @"MusicKiosk/MusicKiosk.json")));
            // List<string> files = Directory.GetFiles(folder, "*.mp3", SearchOption.AllDirectories).ToList();
 
             LoadApplication(new App(songs, new AudioService(folder)));
