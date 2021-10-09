@@ -15,15 +15,15 @@
                 <RowDefinition Height="125"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="1" x:Name="labelSong" FontSize="Header" TextColor="White" HorizontalOptions="Center"/>
-            <Label Grid.Row="3" x:Name="labelSongMeta" FontSize="Large" TextColor="White" HorizontalOptions="Center"/>
+            <Label Grid.Row="1" x:Name="labelSong" FontSize="72" TextColor="White" HorizontalOptions="Center"/>
+            <Label Grid.Row="3" x:Name="labelSongMeta" FontSize="48" TextColor="White" HorizontalOptions="Center"/>
             <Grid Grid.Row="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="300"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="buttonStart" Grid.Column="1" Text="Play" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" Clicked="Button_Clicked"></Button>
+                <Button x:Name="buttonStart" Grid.Column="1" Text="Play" FontSize="26" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" Clicked="Button_Clicked"></Button>
             </Grid>
             <Grid Grid.Row="7">
                 <Grid.ColumnDefinitions>
@@ -31,7 +31,7 @@
                     <ColumnDefinition Width="300"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="buttonStop" Grid.Column="1" Text="Stop" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" IsEnabled="False" WidthRequest="100" Clicked="Button_Clicked_1"></Button>
+                <Button x:Name="buttonStop" Grid.Column="1" Text="Stop" FontSize="26" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" IsEnabled="False" WidthRequest="100" Clicked="Button_Clicked_1"></Button>
             </Grid>
         </Grid>
     </ContentPage.Content>
