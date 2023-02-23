@@ -11,9 +11,9 @@
 
         <flv:FlowListView.FlowColumnTemplate>
             <DataTemplate>
-                    <Frame BackgroundColor="#f8971f" Margin="9" BorderColor="#333f48">
+                    <Frame BackgroundColor="#f8971f" Margin="10" BorderColor="#333f48">
                     <Label HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" TextColor="White"
-                            XAlign="Center" YAlign="Center" FontSize="28"  Text="{Binding Path=Number }" Margin="-14"/>
+                            XAlign="Center" YAlign="Center" FontSize="54"  Text="{Binding Path=Number }" Margin="-14"/>
                 </Frame>
             </DataTemplate>
         </flv:FlowListView.FlowColumnTemplate>
