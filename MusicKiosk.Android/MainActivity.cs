@@ -17,6 +17,7 @@ using static System.Environment;
 using Newtonsoft.Json;
 using MusicKiosk.Models;
 using System.Collections.ObjectModel;
+using System.Runtime.InteropServices;
 
 namespace MusicKiosk.Droid
 {
@@ -35,12 +36,20 @@ namespace MusicKiosk.Droid
             CheckAppPermissions();
             //string[] files = Directory.GetFiles("/", "*.*", SearchOption.TopDirectoryOnly);
 
-            string folder = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryMusic).ToString();
-           
-            ObservableCollection<Song> songs = JsonConvert.DeserializeObject<ObservableCollection<Song>>(File.ReadAllText(Path.Combine(folder, @"MusicKiosk/MusicKiosk.json")));
-           // List<string> files = Directory.GetFiles(folder, "*.mp3", SearchOption.AllDirectories).ToList();
+            string folder = Path.Combine(Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryMusic).ToString(), "MusicKiosk");
 
-            LoadApplication(new App(songs, new AudioService(folder)));
+            List<string> files = Directory.GetFiles(folder, "*.mp3", SearchOption.AllDirectories).ToList();
+            List<Song> songs = JsonConvert.DeserializeObject<List<Song>>(File.ReadAllText(Path.Combine(folder, "MusicKiosk.json")));
+            ObservableCollection<Song> foundSongs = new ObservableCollection<Song>();
+            foreach (Song song in songs)
+            {
+                if(files.Contains(Path.Combine(folder, song.FileName)))
+                {
+                    foundSongs.Add(song);
+                }
+            }
+
+            LoadApplication(new App(foundSongs, new AudioService(folder)));
             App.ParentWindow = this;
         }
 
