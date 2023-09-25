@@ -7,6 +7,8 @@ namespace MusicKiosk.Interfaces
     public interface IAudioPlayer
     {
         void PlayAudioFile(string fileName);
+        void PlayNoise();
         void StopAudioFile();
+        void StopPlayNoise();
     }
 }

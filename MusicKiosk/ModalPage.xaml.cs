@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -29,6 +30,8 @@ namespace MusicKiosk
         {
             buttonStart.IsEnabled = false;
             buttonStop.IsEnabled = true;
+            _audioPlayer.PlayNoise();
+            Thread.Sleep(2000);
             _audioPlayer.PlayAudioFile(_song.FileName);
         }
 
@@ -37,15 +40,18 @@ namespace MusicKiosk
             buttonStart.IsEnabled = true;
             buttonStop.IsEnabled = false;
             _audioPlayer.StopAudioFile();
+            _audioPlayer.StopPlayNoise();
         }
 
         protected override void OnDisappearing()
         {
             _audioPlayer.StopAudioFile();
+            _audioPlayer.StopPlayNoise();
         }
         protected override bool OnBackButtonPressed()
         {
             _audioPlayer.StopAudioFile();
+            _audioPlayer.StopPlayNoise();
             return base.OnBackButtonPressed();
         }
     }
