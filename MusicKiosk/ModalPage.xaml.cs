@@ -30,8 +30,10 @@ namespace MusicKiosk
         {
             buttonStart.IsEnabled = false;
             buttonStop.IsEnabled = true;
-            _audioPlayer.PlayNoise();
-            Thread.Sleep(2000);
+            if (_song.Number > 0)
+            {
+                _audioPlayer.PlayNoise();
+            }
             _audioPlayer.PlayAudioFile(_song.FileName);
         }
 

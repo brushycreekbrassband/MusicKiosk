@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace MusicKiosk.Droid.Services
 {
@@ -53,7 +54,7 @@ namespace MusicKiosk.Droid.Services
             };
 
             //    var fd = global::Android.App.Application.Context.Assets.OpenFd(fileName);
-            string filePath = Path.Combine(_folder, "noise.mp3");
+            string filePath = Path.Combine(_folder, "herewego.mp3");
             _noiseMediaPlayerN.SetDataSource(filePath);
             _noiseMediaPlayerN.Prepare();
         }
@@ -63,6 +64,7 @@ namespace MusicKiosk.Droid.Services
             _mediaPlayer = new MediaPlayer();
             _mediaPlayer.Prepared += (s, e) =>
             {
+                Thread.Sleep(2000);
                 _mediaPlayer.Start();
             };
 
