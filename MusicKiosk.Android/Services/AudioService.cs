@@ -18,7 +18,6 @@ namespace MusicKiosk.Droid.Services
     class AudioService : IAudioPlayer
     {
         MediaPlayer _mediaPlayer;
-        MediaPlayer _noiseMediaPlayerN;
         string _folder;
         public AudioService(string folder)
         {
@@ -35,29 +34,6 @@ namespace MusicKiosk.Droid.Services
             }
         }
 
-        public void StopPlayNoise()
-        {
-            if (_noiseMediaPlayerN != null)
-            {
-                _noiseMediaPlayerN.Stop();
-                _noiseMediaPlayerN.Dispose();
-                _noiseMediaPlayerN = null;
-            }
-        }
-        public void PlayNoise()
-        {
-            StopAudioFile();
-            _noiseMediaPlayerN = new MediaPlayer();
-            _noiseMediaPlayerN.Prepared += (s, e) =>
-            {
-                _noiseMediaPlayerN.Start();
-            };
-
-            //    var fd = global::Android.App.Application.Context.Assets.OpenFd(fileName);
-            string filePath = Path.Combine(_folder, "herewego.mp3");
-            _noiseMediaPlayerN.SetDataSource(filePath);
-            _noiseMediaPlayerN.Prepare();
-        }
         public void PlayAudioFile(string fileName)
         {
             StopAudioFile();

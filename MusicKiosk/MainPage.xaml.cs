@@ -18,7 +18,6 @@ namespace MusicKiosk
             _mainPageViewModel = new MainPageViewModel(this, songs);
             BindingContext = _mainPageViewModel;
         }
-
         private void FlowListView_FlowItemTapped(object sender, ItemTappedEventArgs e)
         {
             ModalPage modalPage = new ModalPage(e.Item as Song, _audioPlayer);

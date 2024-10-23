@@ -17,7 +17,7 @@ namespace MusicKiosk
         {
             InitializeComponent();
             FlowListView.Init();
-            MainPage = new MainPage(songs, audioPlayer);
+            MainPage = new StartPage(songs, audioPlayer);
         }
 
         protected override void OnStart()

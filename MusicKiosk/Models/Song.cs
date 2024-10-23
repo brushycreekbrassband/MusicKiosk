@@ -8,12 +8,11 @@ namespace MusicKiosk.Models
     {
         public int Number { get; set; }
         public string Name { get; set; }
+        public string InstructionsFileName { get; set; }
         public string FileName { get; set; }
 
         public string Meta { get; set; }
-        //public override string ToString()
-        //{
-        //    return Number.ToString();
-        //}
+        public int Set { get; set; }
+
     }
 }
