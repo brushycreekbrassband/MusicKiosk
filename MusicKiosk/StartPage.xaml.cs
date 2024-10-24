@@ -22,10 +22,11 @@ namespace MusicKiosk
 
         private void FlowListView_FlowItemTapped(object sender, ItemTappedEventArgs e)
         {
+            int selectedSet = (e.Item as Song).Set;
             ObservableCollection<Song> filteredSongs = new ObservableCollection<Song>();
             foreach (var song in _StartPageViewModel.Songs)
             {
-                if (song.Set == 0 || song.Set == (e.Item as Song).Set)
+                if (song.Set == 0 || song.Set == selectedSet || selectedSet == 0)
                 {
                     filteredSongs.Add(song);
                 }
