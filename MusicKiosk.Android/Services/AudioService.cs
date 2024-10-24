@@ -17,7 +17,9 @@ namespace MusicKiosk.Droid.Services
 {
     class AudioService : IAudioPlayer
     {
-        MediaPlayer _mediaPlayer;
+        MediaPlayer _audioPlayer;
+        MediaPlayer _noisePlayer;
+
         string _folder;
         public AudioService(string folder)
         {
@@ -26,28 +28,47 @@ namespace MusicKiosk.Droid.Services
 
         public void StopAudioFile()
         {
-            if (_mediaPlayer != null)
+            if (_audioPlayer != null)
             {
-                _mediaPlayer.Stop();
-                _mediaPlayer.Dispose();
-                _mediaPlayer = null;
+                _audioPlayer.Stop();
+                _audioPlayer.Dispose();
+                _audioPlayer = null;
+            }
+
+            if (_noisePlayer != null)
+            {
+                _noisePlayer.Stop();
+                _noisePlayer.Dispose();
+                _noisePlayer = null;
             }
         }
 
-        public void PlayAudioFile(string fileRelativePath)
+        public void PlayAudioFile(string audioFileRelativePath)
         {
             StopAudioFile();
-            _mediaPlayer = new MediaPlayer();
-            _mediaPlayer.Prepared += (s, e) =>
+            _noisePlayer = new MediaPlayer();
+            _noisePlayer.Prepared += (s, e) =>
             {
-                Thread.Sleep(2000);
-                _mediaPlayer.Start();
+                _noisePlayer.Start();
+            };
+
+            string noiseFilePath = Path.Combine(_folder, "noise.mp3");
+            _noisePlayer.SetDataSource(noiseFilePath);
+            _noisePlayer.Prepare();
+
+            _audioPlayer = new MediaPlayer();
+            _audioPlayer.Prepared += (s, e) =>
+            {
+                Thread.Sleep(1000);
+                _audioPlayer.Start();
+                Thread.Sleep(1000);
+                _noisePlayer.Stop();
             };
 
             //    var fd = global::Android.App.Application.Context.Assets.OpenFd(fileName);
-            string filePath = Path.Combine(_folder, fileRelativePath);
-            _mediaPlayer.SetDataSource(filePath);
-            _mediaPlayer.Prepare();
+            string audioFilePath = Path.Combine(_folder, audioFileRelativePath);
+            _audioPlayer.SetDataSource(audioFilePath);
+            _audioPlayer.Prepare();
         }
     }
 }
