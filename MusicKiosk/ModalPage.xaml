@@ -42,7 +42,7 @@
                     <ColumnDefinition Width="300"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="buttonInstructions" Grid.Column="1" Text="Instructions" FontSize="26" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" Clicked="buttonInstructions_Clicked"></Button>
+                <Button x:Name="buttonInstructions" Grid.Column="1" Text="Call Out Instructions" FontSize="26" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" Clicked="buttonInstructions_Clicked"></Button>
             </Grid>
             <Grid Grid.Row="9">
                 <Grid.ColumnDefinitions>
@@ -54,7 +54,7 @@
                     <ColumnDefinition Width="300"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="buttonHereWeGo" Grid.Column="1" Text="Here We Go" FontSize="26" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" Clicked="buttonHereWeGo_Clicked"></Button>
+                <Button x:Name="buttonHereWeGo" Grid.Column="1" Text="Call Out Here We Go" FontSize="26" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" Clicked="buttonHereWeGo_Clicked"></Button>
                 <Button x:Name="buttonStop" Grid.Column="5" Text="Stop" FontSize="26" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" IsEnabled="False" WidthRequest="100" Clicked="StopButton_Clicked"></Button>
             </Grid>
         </Grid>

@@ -37,6 +37,7 @@ namespace MusicKiosk.Droid.Services
 
             if (_noisePlayer != null)
             {
+                _noisePlayer.SetVolume(0, 0);
                 _noisePlayer.Stop();
                 _noisePlayer.Dispose();
                 _noisePlayer = null;
@@ -49,6 +50,7 @@ namespace MusicKiosk.Droid.Services
             _noisePlayer = new MediaPlayer();
             _noisePlayer.Prepared += (s, e) =>
             {
+                _noisePlayer.SetVolume(.10f, .10f);
                 _noisePlayer.Start();
             };
 
