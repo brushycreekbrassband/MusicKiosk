@@ -34,7 +34,7 @@ namespace MusicKiosk.Droid.Services
             }
         }
 
-        public void PlayAudioFile(string fileName)
+        public void PlayAudioFile(string fileRelativePath)
         {
             StopAudioFile();
             _mediaPlayer = new MediaPlayer();
@@ -45,7 +45,7 @@ namespace MusicKiosk.Droid.Services
             };
 
             //    var fd = global::Android.App.Application.Context.Assets.OpenFd(fileName);
-            string filePath = Path.Combine(_folder, fileName);
+            string filePath = Path.Combine(_folder, fileRelativePath);
             _mediaPlayer.SetDataSource(filePath);
             _mediaPlayer.Prepare();
         }

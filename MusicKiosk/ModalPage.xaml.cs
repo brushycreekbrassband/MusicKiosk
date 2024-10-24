@@ -2,6 +2,7 @@
 using MusicKiosk.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -25,10 +26,14 @@ namespace MusicKiosk
             if(song.Number > 0)
             {
                 buttonHereWeGo.IsVisible = true;
+                buttonAnnounceSong.IsVisible = true;
+                buttonInstructions.IsVisible = true;
             }
             else
             {
                 buttonHereWeGo.IsVisible = false;
+                buttonAnnounceSong.IsVisible = false;
+                buttonInstructions.IsVisible = false;
             }
             labelSong.Text = $"{song.Number} - {song.Name}";
             labelSongMeta.Text = song.Meta;
@@ -36,19 +41,20 @@ namespace MusicKiosk
 
         private void buttonAnnounceSong_Clicked(object sender, EventArgs e)
         {
+            _audioPlayer.PlayAudioFile(Path.Combine("Numbers", $"{_song.Number.ToString("D3")}.mp3"));
         }
 
         private void buttonInstructions_Clicked(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(_song.InstructionsFileName))
             {
-                _audioPlayer.PlayAudioFile(_song.InstructionsFileName);
+                _audioPlayer.PlayAudioFile(Path.Combine("Instructions", _song.InstructionsFileName));
             }
         }
 
         private void buttonHereWeGo_Clicked(object sender, EventArgs e)
         {
-            _audioPlayer.PlayAudioFile("000-herewego.mp3");
+            _audioPlayer.PlayAudioFile(Path.Combine("Instructions", "HereWeGo.mp3"));
         }
 
 
