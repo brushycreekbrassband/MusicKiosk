@@ -23,18 +23,6 @@ namespace MusicKiosk
             _song = song;
             _audioPlayer = audioPlayer;
             InitializeComponent();
-            if(song.Number > 0)
-            {
-                buttonHereWeGo.IsVisible = true;
-                buttonAnnounceSong.IsVisible = true;
-                buttonInstructions.IsVisible = true;
-            }
-            else
-            {
-                buttonHereWeGo.IsVisible = false;
-                buttonAnnounceSong.IsVisible = false;
-                buttonInstructions.IsVisible = false;
-            }
             labelSong.Text = $"{song.Number} - {song.Name}";
             labelSongMeta.Text = song.Meta;
         }
