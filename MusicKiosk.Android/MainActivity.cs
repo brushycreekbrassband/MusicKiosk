@@ -43,8 +43,9 @@ namespace MusicKiosk.Droid
             ObservableCollection<Song> foundSongs = new ObservableCollection<Song>();
             foreach (Song song in songs)
             {
-                if(files.Contains(Path.Combine(folder, song.FileName)))
+                if(files.Contains(Path.Combine(folder,"Songs", song.FileName)))
                 {
+                    song.FileName = Path.Combine("Songs", song.FileName);
                     foundSongs.Add(song);
                 }
             }

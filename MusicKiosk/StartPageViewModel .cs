@@ -43,7 +43,10 @@ namespace MusicKiosk
                 var setNumbers = _songs.Select(x => x.Set).Distinct().ToList().OrderBy(x => x);
                 foreach (var setNumber in setNumbers)
                 {
-                    sets.Add(new Song() { Set = setNumber });
+                    if (setNumber != null)
+                    {
+                        sets.Add(new Song() { Set = setNumber });
+                    }
                 }
                 return sets;
             }

@@ -12,7 +12,7 @@ namespace MusicKiosk.Models
         public string FileName { get; set; }
 
         public string Meta { get; set; }
-        public int Set { get; set; }
+        public int? Set { get; set; }
 
     }
 }

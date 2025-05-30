@@ -27,30 +27,30 @@ namespace MusicKiosk
             labelSongMeta.Text = song.Meta;
         }
 
-        private void buttonAnnounceSong_Clicked(object sender, EventArgs e)
-        {
-            _audioPlayer.PlayAudioFile(Path.Combine("Numbers", $"{_song.Number.ToString("D3")}.mp3"));
-        }
+        //private void buttonAnnounceSong_Clicked(object sender, EventArgs e)
+        //{
+        //    _audioPlayer.PlayAudioFile(Path.Combine("Numbers", $"{_song.Number.ToString("D3")}.mp3"));
+        //}
 
-        private void buttonInstructions_Clicked(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(_song.InstructionsFileName))
-            {
-                _audioPlayer.PlayAudioFile(Path.Combine("Instructions", _song.InstructionsFileName));
-            }
-        }
+        //private void buttonInstructions_Clicked(object sender, EventArgs e)
+        //{
+        //    if (!string.IsNullOrEmpty(_song.InstructionsFileName))
+        //    {
+        //        _audioPlayer.PlayAudioFile(Path.Combine("Instructions", _song.InstructionsFileName));
+        //    }
+        //}
 
-        private void buttonHereWeGo_Clicked(object sender, EventArgs e)
-        {
-            _audioPlayer.PlayAudioFile(Path.Combine("Instructions", "HereWeGo.mp3"));
-        }
+        //private void buttonHereWeGo_Clicked(object sender, EventArgs e)
+        //{
+        //    _audioPlayer.PlayAudioFile(Path.Combine("Instructions", "HereWeGo.mp3"));
+        //}
 
 
         private void PlayButton_Clicked(object sender, EventArgs e)
         {
-            buttonAnnounceSong.IsEnabled = false;
-            buttonHereWeGo.IsEnabled = false;
-            buttonInstructions.IsEnabled = false;
+            //buttonAnnounceSong.IsEnabled = false;
+            //buttonHereWeGo.IsEnabled = false;
+            //buttonInstructions.IsEnabled = false;
             buttonStart.IsEnabled = false;
             buttonStop.IsEnabled = true;
             _audioPlayer.PlayAudioFile(_song.FileName);
@@ -60,9 +60,9 @@ namespace MusicKiosk
             _audioPlayer.StopAudioFile();
             buttonStart.IsEnabled = true;
             buttonStop.IsEnabled = false;
-            buttonAnnounceSong.IsEnabled = true;
-            buttonHereWeGo.IsEnabled = true;
-            buttonInstructions.IsEnabled = true;
+            //buttonAnnounceSong.IsEnabled = true;
+            //buttonHereWeGo.IsEnabled = true;
+            //buttonInstructions.IsEnabled = true;
         }
 
         protected override void OnDisappearing()

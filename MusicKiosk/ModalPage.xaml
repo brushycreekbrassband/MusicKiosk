@@ -29,8 +29,8 @@
                     <ColumnDefinition Width="300"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="buttonAnnounceSong" Grid.Column="1" Text="Call Out Number" FontSize="26" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" Clicked="buttonAnnounceSong_Clicked"></Button>
-                <Button x:Name="buttonStart" Grid.Column="5" Text="Play" FontSize="26" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" Clicked="PlayButton_Clicked"></Button>
+                <!--<Button x:Name="buttonAnnounceSong" Grid.Column="1" Text="Call Out Number" FontSize="26" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" Clicked="buttonAnnounceSong_Clicked"></Button>-->
+                <Button x:Name="buttonStart" Grid.Column="3" Text="Play" FontSize="26" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" Clicked="PlayButton_Clicked"></Button>
             </Grid>
             <Grid Grid.Row="7">
                 <Grid.ColumnDefinitions>
@@ -42,7 +42,7 @@
                     <ColumnDefinition Width="300"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="buttonInstructions" Grid.Column="1" Text="Call Out Instructions" FontSize="26" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" Clicked="buttonInstructions_Clicked"></Button>
+                <!--<Button x:Name="buttonInstructions" Grid.Column="1" Text="Call Out Instructions" FontSize="26" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" Clicked="buttonInstructions_Clicked"></Button>-->
             </Grid>
             <Grid Grid.Row="9">
                 <Grid.ColumnDefinitions>
@@ -54,8 +54,8 @@
                     <ColumnDefinition Width="300"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="buttonHereWeGo" Grid.Column="1" Text="Call Out Here We Go" FontSize="26" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" Clicked="buttonHereWeGo_Clicked"></Button>
-                <Button x:Name="buttonStop" Grid.Column="5" Text="Stop" FontSize="26" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" IsEnabled="False" WidthRequest="100" Clicked="StopButton_Clicked"></Button>
+                <!--<Button x:Name="buttonHereWeGo" Grid.Column="1" Text="Call Out Here We Go" FontSize="26" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" Clicked="buttonHereWeGo_Clicked"></Button>-->
+                <Button x:Name="buttonStop" Grid.Column="3" Text="Stop" FontSize="26" BackgroundColor="#f8971f" TextColor="White" BorderWidth="3" BorderColor="#333f48" IsEnabled="False" WidthRequest="100" Clicked="StopButton_Clicked"></Button>
             </Grid>
         </Grid>
     </ContentPage.Content>
