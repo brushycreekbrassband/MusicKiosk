@@ -4,16 +4,16 @@
             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"  
  x:Class="MusicKiosk.MainPage" Background="#bf5700">
     <Grid>
-    <flv:FlowListView FlowColumnCount="10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+    <flv:FlowListView FlowColumnCount="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
             SeparatorVisibility="Default"   
             HasUnevenRows="True"  
             FlowItemsSource="{Binding Songs}" FlowItemTapped="FlowListView_FlowItemTapped">
 
         <flv:FlowListView.FlowColumnTemplate>
             <DataTemplate>
-                    <Frame BackgroundColor="#f8971f" Margin="10" BorderColor="#333f48">
+                    <Frame BackgroundColor="#f8971f" Margin="30" BorderColor="#333f48">
                     <Label HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" TextColor="White"
-                            XAlign="Center" YAlign="Center" FontSize="54"  Text="{Binding Path=Number }" Margin="-14"/>
+                            XAlign="Center" YAlign="Center" FontSize="48"  Text="{Binding Path=Number }" />
                 </Frame>
             </DataTemplate>
         </flv:FlowListView.FlowColumnTemplate>
